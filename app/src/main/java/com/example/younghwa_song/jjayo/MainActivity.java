@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         Intent musicIntent = new Intent(getApplicationContext(), MusicService.class);
@@ -38,7 +40,19 @@ public class MainActivity extends AppCompatActivity {
         buttons.add((Button) findViewById(R.id.Stage11));
         buttons.add((Button) findViewById(R.id.Stage12));
 
+
         initializeButtons();
+
+       Button hskButton = (Button) findViewById(R.id.hsk);
+
+       hskButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+              Intent hskIntent = new Intent(getApplicationContext(), hskActivity.class);
+              startActivity(hskIntent);
+           }
+       });
+
     }
 
     @Override

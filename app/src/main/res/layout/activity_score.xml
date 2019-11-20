@@ -24,7 +24,7 @@
         android:id="@+id/returnStage"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:text="stage choice"
+        android:text="stage choose"
         android:textSize="50dp"
         android:onClick="onClick"
         android:background="@drawable/green_btn"

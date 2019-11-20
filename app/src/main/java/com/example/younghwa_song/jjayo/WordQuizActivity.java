@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -72,6 +73,8 @@ public class WordQuizActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_word_quiz);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -86,6 +89,7 @@ public class WordQuizActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -197,13 +201,9 @@ public class WordQuizActivity extends AppCompatActivity implements View.OnClickL
                             @Override
                             public void run() {
                                 Intent intent;
-                                if (life > 0) {
-                                    int scoreNum = 100-(10*(5-life));
-                                    intent = new Intent(getApplicationContext(),ScoreActivity.class);
-                                    intent.putExtra("score",scoreNum);
-                                }else{
-                                    intent = new Intent(getApplicationContext(),WordStudyActivity.class);
-                                }
+                                int scoreNum = 100-(10*(5-life));
+                                intent = new Intent(getApplicationContext(),ScoreActivity.class);
+                                intent.putExtra("score",scoreNum);
 
 //                                Intent intent = new Intent(getApplicationContext(), QuizStartActivity.class);
                                 startActivity(intent);

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.WindowManager;
 
 
 public class IntroActivity extends AppCompatActivity {
@@ -15,6 +16,8 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_intro);
         final DBHelper dbHelper = new DBHelper(getApplicationContext(), "TEST3.db", null, 1);
 
@@ -42,6 +45,7 @@ public class IntroActivity extends AppCompatActivity {
                 }
                 SystemClock.sleep(2000);
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
         }).start();
     }

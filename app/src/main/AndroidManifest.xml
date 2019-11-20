@@ -9,22 +9,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QuizResultActivity" android:theme="@style/Theme.Transparent"></activity>
-        <activity android:name=".LoadingActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".IntroActivity">
+        <activity
+            android:name=".QuizResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent"></activity>
+        <activity
+            android:name=".LoadingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IntroActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StageStartActivity" />
-        <activity android:name=".VideoPlayActivity" />
-        <activity android:name=".WordStudyActivity" />
-        <activity android:name=".WordQuizActivity" />
-        <activity android:name=".QuizStartActivity" />
-        <activity android:name=".ScoreActivity" />
+        <activity
+            android:name=".StageStartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VideoPlayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WordStudyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WordQuizActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuizStartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hskWordActivity"
+            android:screenOrientation="portrait" />
+
         <service
             android:name=".MusicService"
             android:enabled="true"
