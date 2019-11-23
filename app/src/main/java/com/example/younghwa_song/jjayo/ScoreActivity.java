@@ -23,7 +23,7 @@ public class ScoreActivity extends AppCompatActivity {
         if (score >= 70) {
             scoreText.setText(score + "점 입니다 ! \n"+MainActivity.index +" Stage Clear !");
             score_Button.setText("Stage Choose");
-            intent1 = new Intent(getApplicationContext(),StageStartActivity.class);
+            intent1 = new Intent(getApplicationContext(),MainActivity.class);
 
         } else {
             scoreText.setText("다시 공부하세요 !");

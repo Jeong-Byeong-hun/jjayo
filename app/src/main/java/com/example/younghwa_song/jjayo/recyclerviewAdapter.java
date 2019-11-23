@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class recyclerviewAdapter extends RecyclerView.Adapter<recyclerviewAdapter.ViewHolder> {
 
-    private ArrayList<String> mData = null ;
+    private ArrayList<Word> mData = null ;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
        TextView word, mean, speak;
@@ -26,7 +26,7 @@ public class recyclerviewAdapter extends RecyclerView.Adapter<recyclerviewAdapte
    }
 
     // 생성자에서 데이터 리스트 객체를 전달받음.
-    recyclerviewAdapter(ArrayList<String> list) {
+    recyclerviewAdapter(ArrayList<Word> list) {
         mData = list;
     }
 
@@ -47,8 +47,12 @@ public class recyclerviewAdapter extends RecyclerView.Adapter<recyclerviewAdapte
     // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
     @Override
     public void onBindViewHolder(recyclerviewAdapter.ViewHolder holder, int position) {
-        String text = mData.get(position) ;
-        holder.word.setText(text) ;
+        Word text = mData.get(position) ;
+
+
+        holder.word.setText(text.getCharacter()) ;
+        holder.mean.setText(text.getMeaning()) ;
+        holder.speak.setText(text.getPronunciation()) ;
     }
 
     // getItemCount() - 전체 데이터 갯수 리턴.

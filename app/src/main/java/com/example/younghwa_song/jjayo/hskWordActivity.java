@@ -17,17 +17,14 @@ public class hskWordActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_hsk_word);
 
-        ArrayList<String> list = new ArrayList<>();
-        for (int i=0; i<100; i++) {
-            list.add(String.format("TEXT %d", i)) ;
-        }
+        final DBHelper dbHelper = new DBHelper(getApplicationContext(), "TEST3.db", null, 1);
 
         // 리사이클러뷰에 LinearLayoutManager 객체 지정.
         RecyclerView recyclerView = findViewById(R.id.recycle_hsk) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this)) ;
 
         // 리사이클러뷰에 recyclerviewAdapter 객체 지정.
-        recyclerviewAdapter adapter = new recyclerviewAdapter(list) ;
+        recyclerviewAdapter adapter = new recyclerviewAdapter(dbHelper.getHskWordData(1)) ;
         recyclerView.setAdapter(adapter) ;
     }
 }
