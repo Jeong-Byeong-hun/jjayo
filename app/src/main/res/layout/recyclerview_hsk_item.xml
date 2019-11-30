@@ -16,7 +16,7 @@
             android:layout_height="50dp"
             android:text="한자"
             android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="30dp"
+            android:autoSizeMinTextSize="15dp"
             android:autoSizeMaxTextSize="60dp"
             android:autoSizeStepGranularity="5dp"
             android:gravity="center"
@@ -39,6 +39,7 @@
             android:autoSizeMinTextSize="15dp"
             android:autoSizeMaxTextSize="80dp"
             android:autoSizeStepGranularity="5dp"
+            android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="뜻"
             android:textColor="@color/black" />
@@ -54,13 +55,12 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:autoSizeMaxTextSize="60dp"
-            android:autoSizeMinTextSize="30dp"
+            android:autoSizeMinTextSize="15dp"
             android:autoSizeStepGranularity="5dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/border"
             android:fontFamily="sans-serif"
             android:gravity="center"
-
             android:text="발음"
             android:textColor="@color/black"
             android:textSize="45dp" />

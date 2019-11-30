@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class hskActivity extends AppCompatActivity {
     static int hsk_Index = 0;
+    static String hskTitle = null;
     ArrayList<Button> hskButtons = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,21 +39,27 @@ public class hskActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.hsk_first:
                 hsk_Index = 1;
+                hskTitle = "HSK 단어 1 ~ 100";
                 break;
             case R.id.hsk_second:
                 hsk_Index = 2;
+                hskTitle = "HSK 단어 101 ~ 200";
                 break;
             case R.id.hsk_third:
                 hsk_Index = 3;
+                hskTitle = "HSK 단어 201 ~ 300";
                 break;
             case R.id.hsk_fourth:
                 hsk_Index = 4;
+                hskTitle = "HSK 단어 301 ~ 400";
                 break;
             case R.id.hsk_fifth:
                 hsk_Index = 5;
+                hskTitle = "HSK 단어 401 ~ 500";
                 break;
             case R.id.hsk_sixth:
                 hsk_Index = 6;
+                hskTitle = "HSK 단어 501 ~ 600";
                 break;
         }
         activateButton(); // 버튼 활성화.
