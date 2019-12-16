@@ -44,6 +44,7 @@ public class hskWordActivity extends AppCompatActivity {
 
 
         titleText.setText(hskActivity.hskTitle);
+
         // 리사이클러뷰에 LinearLayoutManager 객체 지정.
         RecyclerView recyclerView = findViewById(R.id.recycle_hsk) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this)) ;

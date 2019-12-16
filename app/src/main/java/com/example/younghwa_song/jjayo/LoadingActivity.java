@@ -21,17 +21,12 @@ public class LoadingActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_loading);
 
+        final DBHelper dbHelper = new DBHelper(getApplicationContext(), "TEST3.db", null, 1);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                HashSet<Word> words = new HashSet<>();
-                words.add(new Word("排", "pái", "열"));
-                words.add(new Word("座", "zuò", "좌석"));
-                words.add(new Word("您", "nín", "당신"));
-                words.add(new Word("的", "de", "~의"));
-                words.add(new Word("座位", "zuòwèi", "좌석"));
-                words.add(new Word("是", "shì", "~이다"));
-
+                HashSet<Word> words = dbHelper.getWordData(MainActivity.index);
                 wordQuizzes = generateWordQuizzes(words);
 
                 runOnUiThread(new Runnable() {

@@ -16,13 +16,14 @@ public class recyclerviewAdapter extends RecyclerView.Adapter<recyclerviewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
        TextView word, mean, speak;
+
        ViewHolder(View itemView){
            super(itemView);
-
            word = itemView.findViewById(R.id.hsk_Word);
            mean = itemView.findViewById(R.id.hsk_Mean);
            speak = itemView.findViewById(R.id.hsk_Speak);
        }
+
    }
 
     // 생성자에서 데이터 리스트 객체를 전달받음.
