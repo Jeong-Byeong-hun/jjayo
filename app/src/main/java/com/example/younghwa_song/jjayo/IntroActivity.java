@@ -30,7 +30,7 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (isFirst)  {
-                    Log.d("안녕하세여", isFirst + "");
+                    Log.d("첫 실행시 실행", isFirst + "");
                     wordDBInsert.wordInsert();
                     wordDBInsert.hskWordInsert();
                     editor = pref.edit();

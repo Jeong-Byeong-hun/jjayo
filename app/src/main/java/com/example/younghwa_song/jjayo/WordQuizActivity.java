@@ -195,6 +195,7 @@ public class WordQuizActivity extends AppCompatActivity implements View.OnClickL
                 state = State.Finished;
                 new Thread(new Runnable() {
                     @Override
+
                     public void run() {
                         SystemClock.sleep(1000);
                         runOnUiThread(new Runnable() {

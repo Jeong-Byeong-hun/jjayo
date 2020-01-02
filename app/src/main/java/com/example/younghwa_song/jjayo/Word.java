@@ -6,11 +6,26 @@ public class Word {
     private String character;
     private String pronunciation;
     private String meaning;
+    private boolean isSelect;
 
     Word(String character, String pronunciation, String meaning) {
         this.character = character;
         this.pronunciation = pronunciation;
         this.meaning = meaning;
+    }
+    Word(String character, String pronunciation, String meaning, boolean isSelect) {
+        this.character = character;
+        this.pronunciation = pronunciation;
+        this.meaning = meaning;
+        this.isSelect = isSelect;
+    }
+
+    public void setSelect(boolean select) {
+        isSelect = select;
+    }
+
+    public boolean getSelect() {
+        return isSelect;
     }
 
     String getCharacter() {

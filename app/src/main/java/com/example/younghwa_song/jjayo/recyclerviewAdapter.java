@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,12 +18,14 @@ public class recyclerviewAdapter extends RecyclerView.Adapter<recyclerviewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
        TextView word, mean, speak;
+       CheckBox cbSelect;
 
        ViewHolder(View itemView){
            super(itemView);
            word = itemView.findViewById(R.id.hsk_Word);
            mean = itemView.findViewById(R.id.hsk_Mean);
            speak = itemView.findViewById(R.id.hsk_Speak);
+           cbSelect = itemView.findViewById(R.id.cbSelect);
        }
 
    }
@@ -48,12 +52,24 @@ public class recyclerviewAdapter extends RecyclerView.Adapter<recyclerviewAdapte
     // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
     @Override
     public void onBindViewHolder(recyclerviewAdapter.ViewHolder holder, int position) {
-        Word text = mData.get(position) ;
+        final Word text = mData.get(position) ;
 
 
         holder.word.setText(text.getCharacter()) ;
         holder.mean.setText(text.getMeaning()) ;
         holder.speak.setText(text.getPronunciation()) ;
+
+        holder.cbSelect.setOnCheckedChangeListener(null);
+
+        holder.cbSelect.setChecked(mData.get(position).getSelect());
+
+        holder.cbSelect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                text.setSelect(isChecked);
+            }
+        });
+
     }
 
     // getItemCount() - 전체 데이터 갯수 리턴.
